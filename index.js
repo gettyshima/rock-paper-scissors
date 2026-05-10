@@ -1,4 +1,6 @@
 console.log("hello world");
+const humanScore = 0;
+const computerScore = 0;
 
 function getComputerChoice(){
     function getRandomIntInclusive(min, max) {
@@ -19,6 +21,8 @@ console.log(getComputerChoice());
 
 function getHumanChoice(){
     let humanChoice = prompt("rock, paper or scissors?");
-    humanChoice.toLowerCase();
+   humanChoice = humanChoice.toLowerCase();
     return humanChoice;
 }
+console.log(getHumanChoice());
+
