@@ -9,7 +9,7 @@ START
             return Scissors;
         ENDIF
     function getHumanChoice()
-        PROMPT case-sensitive human choice;
+        PROMPT case-insensitive human choice;
     INIT humanScore global variable to zero;
     INIT computerScore global variable to zero;
     function playRound;

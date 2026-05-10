@@ -8,7 +8,7 @@ function getComputerChoice(){
     }
     let randomInt = getRandomIntInclusive(1,3);
     if (randomInt == 1){
-        return "Rock";
+        return "rock";
     }else if (randomInt == 2){
         return "paper";
     }else {
