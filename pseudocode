@@ -1,0 +1,30 @@
+START
+    function getComputerChoice();
+        DETERMINE using Math.Random() min and max value Inclusivity;
+        IF choice is equal to 1;
+            return Rock;
+        ELSEIF choice is equal to 2;
+            return Paper;
+        ELSEIF choice equal 3;
+            return Scissors;
+        ENDIF
+    function getHumanChoice()
+        PROMPT case-sensitive human choice;
+    INIT humanScore global variable to zero;
+    INIT computerScore global variable to zero;
+    function playRound;
+        IF getComputerChoice is getHumanChoice;
+            print play again;
+        ELSEIF getComputerChoice is rock and getHumanChoice is Scissors;
+            print computer wins
+            computerScore increament
+        ELSEIF getComputerChoice is scissors and getHumanChoice is paper;
+            print computer wins
+            computerScore increament
+        ELSEIF getComputerChoice is paper and getHumanChoice is rock;
+            print computer wins
+            computerScore increament
+        ELSE
+            print human wins
+            humanScore increament
+        ENDIF
