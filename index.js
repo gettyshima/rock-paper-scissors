@@ -1,28 +1,52 @@
 console.log("hello world");
-const humanScore = 0;
-const computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice(){
     function getRandomIntInclusive(min, max) {
         const minCeiled = Math.ceil(min);
         const maxFloored = Math.floor(max);
-        return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
+        return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
     }
     let randomInt = getRandomIntInclusive(1,3);
     if (randomInt == 1){
         return "rock";
     }else if (randomInt == 2){
         return "paper";
-    }else {
+    }else if (randomInt == 3){
         return "scissors";
     }
 }
-console.log(getComputerChoice());
 
 function getHumanChoice(){
-    let humanChoice = prompt("rock, paper or scissors?");
-   humanChoice = humanChoice.toLowerCase();
-    return humanChoice;
+    let choice = prompt("rock, paper or scissors?");
+    choice = choice.toLowerCase();
+    return choice;
 }
-console.log(getHumanChoice());
 
+
+function playRound(humanChoice, computerChoice) {
+  if(humanChoice == 'rock' && computerChoice == 'scissors'){
+    humanScore += 1;
+    console.log ("You win! rock beats scissors");
+  }else if (humanChoice == 'paper' && computerChoice == 'rock'){
+    humanScore +=1;
+    console.log("You win! paper beats rock");
+  }else if (humanChoice == 'scissors' && computerChoice == 'paper'){
+    humanScore +=1;
+    console.log("You win! scissors beats paper");
+  }else{
+    computerScore += 1;
+    console.log("Computer Wins, you loose")
+  }
+}
+
+
+const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice();
+
+
+playRound(humanSelection, computerSelection);
+
+console.log(computerScore);
+console.log(humanScore);
